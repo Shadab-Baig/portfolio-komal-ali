@@ -3,6 +3,7 @@
   filter: drop-shadow(2px 4px 30px rgba(0, 0, 0, 0.1));
   backdrop-filter: blur(35px);
   border-radius: 14px;
+  box-shadow: 2px 4px 30px rgba(0, 0, 0, 0.1);
   padding: 15px 15px;
   height: calc(100vh - 400px);
   overflow-y: scroll;
@@ -40,7 +41,7 @@
         font-weight: 600;
         font-size: 13px;
         line-height: 20px;
-        color: #ffffff;
+        color: #3E3B3B;
       }
 
       .user-profile-list-info-right {
@@ -170,7 +171,7 @@
             font-weight: 600;
             font-size: 13px;
             line-height: 20px;
-            color: #ffffff;
+            color: #3E3B3B;
           }
 
           .profile-skill-percentage {
@@ -184,7 +185,7 @@
 
         .profile-skills-progress {
           height: 4px !important;
-          background-color: #c6c6c6;
+          background-color: #191923;
           border-radius: 0px !important;
           margin-bottom: 13px !important;
 
