@@ -39,6 +39,9 @@
         a{
           color: #3E3B3B;
           text-decoration: none;
+          &:hover{
+            color: #FBBB2E;
+          }
         }
       }
     }
