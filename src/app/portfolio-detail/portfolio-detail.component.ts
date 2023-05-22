@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit,ViewChild, ViewEncapsulation, HostListener  } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
@@ -17,7 +17,18 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   ],
 })
 export class PortfolioDetailComponent implements OnInit {
-  public imgSrc: string | undefined;
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (event.key === 'ArrowLeft') {
+      this.previousImage();
+    }
+    if (event.key === 'ArrowRight') {
+      this.nextImage();
+    }
+  }
+  @ViewChild('myDiv') myDiv: any;
+  public imgSrc: string = '';
   public closeResult: string = '';
   public bgImage: string | undefined;
   public selected: any | undefined;
@@ -94,14 +105,22 @@ export class PortfolioDetailComponent implements OnInit {
   }
 
   public previousImage(): void {
-    this.currentImageIndex--;
+    if (this.currentImageIndex > 0) {
+      this.currentImageIndex--;
+    }
 
 }
   public nextImage(): void {
-  this.currentImageIndex++;
+    const totalImages = this.selected.category.length;
+    if (this.currentImageIndex < totalImages - 1) {
+      this.currentImageIndex++;
+    }
 }
   public onClose(){
   this.modalService.dismissAll();
+}
+public scrollToTop(){
+  this.myDiv.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 }
