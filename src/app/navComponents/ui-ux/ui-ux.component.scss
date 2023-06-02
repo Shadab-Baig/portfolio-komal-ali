@@ -131,7 +131,16 @@
     transform: translate(-50%, -50%) scale(1.1);
   }
   
-  
+  @media (max-width:1200px){
+    .portfolio__gallery{
+      justify-content: space-between;
+      .portfolio__gallery--item{
+        width: 30% !important;
+      }
+    }
+    
+  }
+
   @media (max-width:700px){
     .portfolio{
       h1{
