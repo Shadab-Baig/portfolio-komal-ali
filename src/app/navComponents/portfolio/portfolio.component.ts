@@ -7,14 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./portfolio.component.scss'],
 })
 export class PortfolioComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor() {}
   ngOnInit(): void {
   }
 
-  goToGraphics(){
-    this.router.navigate(['graphic-designing'])
-}
-  gotoUi(){
-    this.router.navigate(['UI/UX'])
-  }
 }

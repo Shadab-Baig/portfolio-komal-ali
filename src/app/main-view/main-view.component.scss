@@ -1,6 +1,6 @@
 .main {
   height: 100%;
-  background: #EBEBEB;
+  background: linear-gradient(109.64deg, #FFFFFF -0.28%, rgba(98, 162, 182, 0.192) 100%);
 
   .portfolio-section-bg {
     position: relative;
@@ -8,6 +8,7 @@
     .shapes {
       .circles {
         position: absolute;
+        display: none;
         top: 0;
         left: 0;
         width: 100%;
@@ -120,14 +121,15 @@
     }
 
     .porfolio-section-wrapper {
-      width: 85%;
+      width: 90%;
       margin: auto;
       display: flex;
       gap: 30px;
       padding: 50px 0;
+      position: relative;
 
       .porfolio-section-list {
-        width: 20%;
+        width: 22%;
         z-index: 2;
       }
 
@@ -135,72 +137,145 @@
         width: 76%;
         z-index: 2;
       }
-
-      .user-profile-detail-navbar-mobile {
-        position: sticky;
-        right: 0;
-        bottom: 0;
-        border: 1px solid rgba(128, 0, 0, 0.11);
-        background: #6B6B6B;
-        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
-        border-radius: 0px 14px;
-        margin: 0 -20px;
-        display: none;
-
-        .user-profile-detail-nav-links {
-          display: flex;
-          gap: 22px;
-          list-style: none;
-          padding-right: 3rem;
-
-          li {
-            a {
-              text-decoration: none;
-              color: #ffffff;
-
-              &:focus {
-                color: #fbbb0e;
+      .sidebar{
+        position: absolute;
+        top: 50px;
+        right: 4px;
+        width: 55px;
+        height: calc(100vh - 100px);
+        background: rgba(98, 162, 182, 0.22);
+        border-radius: 0px 0px 14px 0px;
+        transition: width 0.3s ease-in-out;
+        z-index: 999;
+        border-top-right-radius: 10px;
+        &.open {
+          right: 4px;
+          width: 150px;
+          transition: width 0.3s ease-in-out;
+          overflow: hidden;
+        }
+        &.opened-sidebar{
+          background: rgba(98, 162, 182, 0.99);
+          z-index: 9999;
+        }
+        .sidebar-header{
+          padding: 10px;
+          text-align: right;
+          background: rgba(98, 162, 182, 0.99);
+          border-top-right-radius: 10px;
+          .sidebar-toggle{
+            background: none;
+            border: none;
+            cursor: pointer;
+            .material-icons{
+              font-size: 24px;
+              color: #fff;
+            }
+          }
+        }
+        .active-route-name{
+          position: absolute;
+          top: 120px;
+          transform: rotate(90deg);
+          right: 0;
+          left: 0;
+          p{
+            font-weight: 300;
+            font-size: 1.1vw;
+            color: #62A2B6;
+            text-transform: uppercase;
+            width: 230px;
+          }
+        }
+        .sidebar-footer{
+          position: absolute;
+          bottom: 30px;
+          right: 10px;
+          .social-icons{
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            a{
+              transform: rotate(90deg);
+              i{
+                color: #fff;
+                background-color: #62A2B6;
+                padding: 8px 8px;
+                border-radius: 50%;
+                font-size: 16px;
               }
-
-              &.active {
-                color: #fbbb0e;
+            }
+            &.open{
+              a{
+                i{
+                  background-color: #fff;
+                  color: #62A2B6;
+                }
+              }
+            }
+          }
+        }
+        .user-profile-detail-navbar {
+          position: absolute;
+          z-index: 999;
+          top: 75px;
+    
+          .user-profile-detail-nav-links {
+            list-style: none;
+            li {
+              padding-bottom: 20px;
+              a {
+                text-decoration: none;
+                color: #ffffff;
+                font-weight: 300;
+                &.active{
+                  color: #000;
+                  font-weight: 500;
+                }
               }
             }
           }
         }
       }
-    }
-  }
-}
-
-
-.user-profile-detail-navbar {
-  position: absolute;
-  right: 0;
-  top: 0;
-  border: 1px solid rgba(128, 0, 0, 0.11);
-  border-bottom-left-radius: 20px;
-  background: rgba(23, 134, 238, 0.5);
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
-  border-radius: 0px 14px;
-
-  .user-profile-detail-nav-links {
-    display: flex;
-    gap: 22px;
-    list-style: none;
-    padding-right: 3rem;
-
-    li {
-      a {
-        text-decoration: none;
-        color: #ffffff;
-
-        &:focus {
-          color: #0675eb;
+      .sidebar-overlay{
+        position: absolute;
+        top: 51px;
+        left: 0;
+        width: 89.8vw;
+        height: calc(100vh - 102px);
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+        border-radius: 10px;
+        &.open{
+          display: block; 
         }
+      }
 
-        &.active {
-          color: #3e3b3b;
+    }
+    .navbar-mobile{
+      display: none;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      border: 1px solid black;
+      z-index: 999;
+      background-color: #62A2B6;
+      .user-whole-profile-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .user-profile-wrapper{
+          display: flex;
+          .user-profile-icon{
+            img{
+              width: 48px;
+            }
+          }
+        }
+        .user-toggle-menu-wrapper{
+          display: flex;
         }
       }
     }
@@ -208,20 +283,28 @@
 }
 
 
+// @media (max-width: 1720px) {
+//   .porfolio-section-wrapper {
+//     width: 90% !important;
 
-@media (max-width: 1720px) {
-  .porfolio-section-wrapper {
-    width: 90% !important;
-
-    .porfolio-section-list {
-      width: 22% !important;
-    }
-  }
-}
+//     .porfolio-section-list {
+//       width: 22% !important;
+//     }
+//   }
+// }
 
 @media (max-width:700px) {
   .user-profile-detail-navbar-mobile {
     display: block !important;
+  }
+  .navbar-mobile{
+    display: block !important;
+  }
+  .sidebar{
+    display: none;
+  }
+  .porfolio-section-list{
+    display: none;
   }
 }
 

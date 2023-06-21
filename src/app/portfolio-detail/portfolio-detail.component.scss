@@ -7,7 +7,7 @@
     align-items: center;
     margin-bottom: 30px;
     button {
-      background-color: #fbbb0e;
+      background-color: #62A2B6;
       padding: 12px 15px;
       border-radius: 50%;
       outline: none;
@@ -57,7 +57,7 @@
       opacity: 0;
       transition: opacity 0.3s;
       svg {
-        background-color: #fbbb0e;
+        background-color: #62A2B6;
         padding: 12px 15px;
         border-radius: 50%;
         outline: none;
@@ -98,7 +98,7 @@
 }
 
 .scroll-to-top{
-  background: #fbbb0e;
+  background: #62A2B6;
   border: none;
   outline: none;
   border-radius: 20%;
@@ -135,7 +135,7 @@
       #prev-button {
         font-size: 0;
         border: none;
-        background-color: #FBBB0E;
+        background-color: #62A2B6;
         padding: 12px 15px;
         border-radius: 50%;
         outline: none;
@@ -148,7 +148,7 @@
       }
       #next-button {
         font-size: 0;
-        background-color: #FBBB0E;
+        background-color: #62A2B6;
         padding: 12px 15px;
         border-radius: 50%;
         border: none;
@@ -179,10 +179,6 @@
     }
   }
 }
-// .custom-backdrop.show {
-//   background: linear-gradient(109.64deg, #1d1a1f -0.28%, #2f3f4b 100%);
-//   opacity: 1;
-// }
 
 @media (max-width: 700px) {
   .portfolio-details {

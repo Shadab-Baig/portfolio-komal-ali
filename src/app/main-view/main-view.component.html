@@ -1,5 +1,32 @@
 <div class="main">
     <div class="portfolio-section-bg" id="portfolio-section-bg">
+      <div class="navbar-mobile" [ngClass]="{ open: isOpen, 'opened-sidebar': isOpen }">
+        <div class="user-whole-profile-wrapper">
+          <div class="user-profile-wrapper">
+            <div class="user-profile-icon">
+              <img src="assets/img/dummy-avatar-image.png" alt="">
+            </div>
+            <div class="user-profile-title">
+              <div class="user-profile-name">
+                <span>Faisal Ali</span>
+              </div>
+              <div class="user-profile-role">
+                <span>Senior UI/UX Designer</span>
+              </div>
+            </div>
+          </div>
+          <div class="user-toggle-menu-wrapper">
+            <div class="active-router">
+              <p>{{activeRoute}}</p>
+            </div>
+            <div class="toggle-menu-button">
+              <button class="menu-button" (click)="toggleSidebar()">
+                <i class="material-icons">{{ isOpen ? "close" : "menu" }}</i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
         <div class="shapes">
             <ul class="circles">
                 <li></li>
@@ -17,35 +44,70 @@
         <div class="porfolio-section-wrapper" id="porfolio-section-wrapper">
           <div class="porfolio-section-list" id="porfolio-section-list">
             <app-profile></app-profile>
-            <app-profile-list></app-profile-list>
+            <!-- <app-profile-list></app-profile-list> -->
           </div>
           <div class="porfolio-section-detail" id="porfolio-section-detail">
             <app-profile-detail></app-profile-detail>
           </div>
-          <ng-container>
-            <div class="user-profile-detail-navbar-mobile">
-              <ul class="user-profile-detail-nav-links">
-                <li>
-                  <a routerLink="about" href="" [routerLinkActive]="'active'">About</a>
-                </li>
-                <li>
-                  <a routerLink="resume" href="" [routerLinkActive]="'active'"
-                    >Resume</a
-                  >
-                </li>
-                <li>
-                  <a routerLink="portfolio" href="" [routerLinkActive]="'active'"
-                    >Portfolio</a
-                  >
-                </li>
-                <li>
-                  <a routerLink="contact" href="" [routerLinkActive]="'active'"
-                    >Contact</a
-                  >
-                </li>
-              </ul>
+          <div class="sidebar" [ngClass]="{ open: isOpen, 'opened-sidebar': isOpen }">
+            <div class="sidebar-header">
+              <button class="sidebar-toggle" (click)="toggleSidebar()">
+                <i class="material-icons">{{ isOpen ? "close" : "menu" }}</i>
+              </button>
             </div>
-          </ng-container>
+            <div *ngIf="!isOpen" class="active-route-name">
+            <p>{{activeRoute}}</p>
+            </div>
+            <div class="sidebar-footer">
+              <div class="social-icons" [ngClass]="{'open': isOpen}">
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a
+                  href="https://twitter.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+            <div *ngIf="isOpen">
+              <div class="user-profile-detail-navbar">
+                <ul class="user-profile-detail-nav-links">
+                  <li>
+                    <a routerLink="about" (click)="toggleSidebar()" [routerLinkActive]="'active'">About</a>
+                  </li>
+                  <li>
+                    <a routerLink="resume" (click)="toggleSidebar()" [routerLinkActive]="'active'">Resume</a>
+                  </li>
+                  <li>
+                    <a (click)="toggleSidebar()"
+                      routerLink="portfolio"
+                      [ngClass]="{ active: isPortfolioActive() }"
+                    >
+                      Portfolio
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="toggleSidebar()" routerLink="contact" [routerLinkActive]="'active'">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-overlay" [ngClass]="{'open': isOpen}" (click)="toggleSidebar()"></div>
         </div>
       </div>
     

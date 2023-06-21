@@ -1,12 +1,28 @@
 .container {
   margin-top: 1rem;
-
-  h1 {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 31px;
-    color: #3E3B3B;
-    margin-bottom: 20px;
+  .portfolio-heading{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding-top: 1rem;
+    margin-bottom: 30px;
+    button {
+      background-color: #62A2B6;
+      padding: 12px 15px;
+      border-radius: 50%;
+      outline: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    h1{
+      font-weight: 700;
+      font-size: 31px;
+      line-height: 46px;
+      color: #3E3B3B;
+    }
   }
 
   .exp {
@@ -19,7 +35,7 @@
     z-index: 3;
 
     &::before {
-      background-color: #FBBB0E;
+      background-color: rgba(98, 162, 182, 0.99);
       position: absolute;
       opacity: 47%;
       width: 2px;
@@ -38,7 +54,7 @@
       font-style: normal;
       font-weight: 700;
       font-size: 21px;
-      color: #FBBB0E;
+      color: #585858;
     }
   }
 
@@ -57,7 +73,7 @@
         font-size: 15px;
         margin-left: -5px;
         line-height: 26px;
-        color: #FBBB0E;
+        color: #62A2B6;
 
         svg {
           margin-left: -3.10em;
@@ -88,7 +104,7 @@
 
         &::after {
           position: absolute;
-          background-color: #FBBB0E;
+          background-color: #62A2B6;
           opacity: 47%;
           width: 2px;
           content: "";

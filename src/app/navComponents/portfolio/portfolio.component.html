@@ -1,13 +1,16 @@
 <div class="portfolio-wrapper">
   <div class="portfolio-heading">
+    <button routerLink="/about">
+      <img src="assets/img/chevron.svg" alt="icon" />
+    </button>
     <h1>Portfolio</h1>
   </div>
   <div class="select-category-whole-wrapper">
     <div class="select-category-wrapper">
-      <div class="select-category-ui" (click)="gotoUi()">
+      <div class="select-category-ui" routerLink="/UI/UX">
         <h3>UI/UX</h3>
       </div>
-      <div class="select-category-graphics" (click)="goToGraphics()">
+      <div class="select-category-graphics" routerLink="/graphic-designing">
         <h3>Graphics Design</h3>
       </div>
     </div>

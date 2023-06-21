@@ -12,7 +12,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 31px;
-    color: #FBBB2E;
+    color: #62A2B6;
     }
     span{
       color:#3E3B3B
@@ -36,11 +36,11 @@
           padding: 17px 19px;
           background-size: 65px;
         }
-        a{
+        a,p{
           color: #3E3B3B;
           text-decoration: none;
           &:hover{
-            color: #FBBB2E;
+            color: #62A2B6
           }
         }
       }

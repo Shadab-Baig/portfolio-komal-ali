@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 // @import "bootstrap/scss/bootstrap";
 
-@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
   margin: 0;
@@ -20,17 +20,16 @@ h6 {
 }
 
 .title-heading {
-  font-size: 31px;
-  color: #3E3B3B;
   font-weight: 700;
-  line-height: 51px;
+  font-size: 25px;
+  color: #585858;
 }
 
 
 @media (max-width: 700px){
   #porfolio-section-wrapper{
     display: block;
-    width: 90% !important;
+    width: 95% !important;
     padding-bottom: 0;
   }
   #porfolio-section-list{
@@ -38,7 +37,7 @@ h6 {
   }
   #porfolio-section-detail{
     width: 100% !important;
-    height: calc(100vh - 260px);
+    height: auto;
   }
   .user-profile{
     height: auto !important;
@@ -58,9 +57,13 @@ h6 {
     }
   }
   .user-profile-detail-page{
-    padding: 10px 20px 29px 20px !important;
+    padding: 10px 0px 24px 10px !important;
+    width: 95% !important;
   }
   .user-profile-detail-navbar{
     display: none;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

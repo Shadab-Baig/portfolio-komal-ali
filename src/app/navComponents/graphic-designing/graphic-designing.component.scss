@@ -6,7 +6,7 @@
     align-items: center;
     margin-bottom: 30px;
     button{
-      background-color: #FBBB0E;
+      background-color: #62A2B6;
       padding: 12px 15px;
       border-radius: 50%;
       outline: none;
@@ -49,9 +49,8 @@
         transition: 0.3s;
         font-family: "Poppins", sans-serif;
         color: #878789;
-    
         &.active {
-          color: #FBBB0E;
+          color: #62A2B6;
         }
       }
     }
