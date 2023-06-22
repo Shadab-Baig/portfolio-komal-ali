@@ -1,6 +1,7 @@
 .main {
   height: 100%;
   background: linear-gradient(109.64deg, #FFFFFF -0.28%, rgba(98, 162, 182, 0.192) 100%);
+  overflow-x: hidden;
 
   .portfolio-section-bg {
     position: relative;
@@ -325,9 +326,9 @@
       }
       .sidebar-mobile{
         position: absolute;
-        right: 0px;
-        overflow-x: hidden;
-        display: none;
+        right: -330px;
+        // overflow-x: hidden;
+        // display: none;
         top: 0;
         background: rgba(98, 162, 182, 0.99);
         border-radius: 0px 0px 0px 16px;
@@ -338,9 +339,9 @@
           right: 0px;
           top: 0px;
           width: 190px;
-          transition: display 0.3s ease-in-out;
-          overflow: hidden;
-          display: block;
+          transition: right 0.3s ease-in-out;
+          // overflow: hidden;
+          // display: block;
           z-index: 999;
         }
         .menu-type{
