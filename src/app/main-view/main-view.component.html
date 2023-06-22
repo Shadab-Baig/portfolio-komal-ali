@@ -1,6 +1,6 @@
 <div class="main">
     <div class="portfolio-section-bg" id="portfolio-section-bg">
-      <div class="navbar-mobile" [ngClass]="{ open: isOpen, 'opened-sidebar': isOpen }">
+      <div class="navbar-mobile">
         <div class="user-whole-profile-wrapper">
           <div class="user-profile-wrapper">
             <div class="user-profile-icon">
@@ -23,6 +23,34 @@
               <button class="menu-button" (click)="toggleSidebar()">
                 <i class="material-icons">{{ isOpen ? "close" : "menu" }}</i>
               </button>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-mobile" [ngClass]="{ open: isOpen, 'opened-sidebar': isOpen }">
+          <div class="menu-type">
+            <span>MENU</span>
+          </div>
+          <div class="mobile-navigation-menu">
+            <div class="user-profile-detail-navbar">
+              <ul class="user-profile-detail-nav-links">
+                <li>
+                  <a routerLink="about" (click)="toggleSidebar()" [routerLinkActive]="'active'">About</a>
+                </li>
+                <li>
+                  <a routerLink="resume" (click)="toggleSidebar()" [routerLinkActive]="'active'">Resume</a>
+                </li>
+                <li>
+                  <a (click)="toggleSidebar()"
+                    routerLink="portfolio"
+                    [ngClass]="{ active: isPortfolioActive() }"
+                  >
+                    Portfolio
+                  </a>
+                </li>
+                <li>
+                  <a (click)="toggleSidebar()" routerLink="contact" [routerLinkActive]="'active'">Contact</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -107,7 +135,7 @@
               </div>
             </div>
           </div>
-          <div class="sidebar-overlay" [ngClass]="{'open': isOpen}" (click)="toggleSidebar()"></div>
+          <!-- <div class="sidebar-overlay" [ngClass]="{'open': isOpen}" (click)="toggleSidebar()"></div> -->
         </div>
       </div>
     

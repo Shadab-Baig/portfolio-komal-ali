@@ -315,6 +315,56 @@
               .material-icons{
                 font-size: 24px;
                 color: #fff;
+                z-index: 9999;
+                position: relative;
+              
+              }
+            }
+          }
+        }
+      }
+      .sidebar-mobile{
+        position: absolute;
+        right: 0px;
+        overflow-x: hidden;
+        display: none;
+        top: 0;
+        background: rgba(98, 162, 182, 0.99);
+        border-radius: 0px 0px 0px 16px;
+        height:calc(100vh - 20px);
+        z-index: 999;
+        &.open {
+          right: 0px;
+          top: 0px;
+          width: 190px;
+          transition: display 0.3s ease-in-out;
+          overflow: hidden;
+          display: block;
+          z-index: 999;
+        }
+        .menu-type{
+          padding-top: 1.3rem;
+          padding-left: 1rem;
+          span{
+            font-weight: 400;
+            color: #FFFFFF;
+          }
+        }
+        .mobile-navigation-menu{
+          padding-top: 3rem;
+          .user-profile-detail-nav-links {
+            list-style: none;
+            padding-left: 3.5rem;
+            li {
+              padding-bottom: 20px;
+              a {
+                text-decoration: none;
+                color: #ffffff;
+                font-weight: 300;
+                &.active{
+                  color: #000;
+                  font-weight: 500;
+                }
               }
             }
           }
