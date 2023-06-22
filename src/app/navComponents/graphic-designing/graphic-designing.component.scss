@@ -177,8 +177,9 @@
       gap: 0px;
       flex-direction: column;
       .portfolio__gallery--item{
-        width: 100%;
+        width: 100% !important;
         .gallery-image{
+          height: 254px !important;
           img{
             width: 100%;
           }
