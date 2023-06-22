@@ -3,7 +3,7 @@
       <div class="navbar-mobile">
         <div class="user-whole-profile-wrapper">
           <div class="user-profile-wrapper">
-            <div class="user-profile-icon" (click)="toggleProfileSidebar()">
+            <div class="user-profile-icon" [ngClass]="{'open': isOpenProfile}" (click)="toggleProfileSidebar()">
               <img *ngIf="!isOpenProfile" src="assets/img/dummy-avatar-image.png" alt="">
               <i *ngIf="isOpenProfile" class="material-icons">close</i>
             </div>            
@@ -21,7 +21,7 @@
               <p>{{activeRoute}}</p>
             </div>
             <div class="toggle-menu-button">
-              <button class="menu-button" (click)="toggleSidebar()">
+              <button class="menu-button"  (click)="toggleSidebar()">
                 <i class="material-icons">{{ isOpen ? "close" : "menu" }}</i>
               </button>
             </div>
@@ -209,8 +209,10 @@
               </div>
             </div>
           </div>
-          <!-- <div class="sidebar-overlay" [ngClass]="{'open': isOpen}" (click)="toggleSidebar()"></div> -->
+          <div class="sidebar-overlay" [ngClass]="{'open': isOpen}" (click)="toggleSidebar()">
+          </div>
         </div>
       </div>
-    
+      <!-- <div class="sidebar-overlay-for-mobile" [ngClass]="{'open': isOpenProfile}" (click)="toggleSidebar()">
+      </div> -->
 </div>
