@@ -333,6 +333,7 @@
         border-radius: 0px 0px 0px 16px;
         height:calc(100vh - 20px);
         z-index: 999;
+        border-top-left-radius: 20px;
         &.open {
           right: 0px;
           top: 0px;
@@ -364,6 +365,32 @@
                 &.active{
                   color: #000;
                   font-weight: 500;
+                }
+              }
+            }
+          }
+        }
+        .sidebar-footer{
+          width: 67%;
+          margin: 0 auto;
+          .social-icons{
+            display: flex;
+            flex-direction: row;
+            gap: 14px;
+            a{
+              i{
+                color: #fff;
+                background-color: #62A2B6;
+                padding: 8px 8px;
+                border-radius: 50%;
+                font-size: 16px;
+              }
+            }
+            &.open{
+              a{
+                i{
+                  background-color: #fff;
+                  color: #62A2B6;
                 }
               }
             }
