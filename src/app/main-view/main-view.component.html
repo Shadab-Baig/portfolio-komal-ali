@@ -3,9 +3,10 @@
       <div class="navbar-mobile">
         <div class="user-whole-profile-wrapper">
           <div class="user-profile-wrapper">
-            <div class="user-profile-icon">
-              <img src="assets/img/dummy-avatar-image.png" alt="">
-            </div>
+            <div class="user-profile-icon" (click)="toggleProfileSidebar()">
+              <img *ngIf="!isOpenProfile" src="assets/img/dummy-avatar-image.png" alt="">
+              <i *ngIf="isOpenProfile" class="material-icons">close</i>
+            </div>            
             <div class="user-profile-title">
               <div class="user-profile-name">
                 <span>Komal Ali</span>
@@ -26,7 +27,7 @@
             </div>
           </div>
         </div>
-        <div class="sidebar-mobile" [ngClass]="{ open: isOpen, 'opened-sidebar': isOpen }">
+        <div class="sidebar-mobile" [ngClass]="{ 'open': isOpen, 'opened-sidebar': isOpen }">
           <div class="menu-type">
             <span>MENU</span>
           </div>
@@ -76,6 +77,54 @@
               >
                 <i class="fab fa-twitter"></i>
               </a>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-profile"  [ngClass]="{ 'open': isOpenProfile, 'opened-sidebar': isOpenProfile }">
+          <div class="user-profile-list">
+            <div class="user-profile-wrapper">
+              <div class="profile-img">
+                <img src="assets/img/contact-avatar.png" alt="" />
+              </div>
+              <div class="user-details">
+                <h3 class="user-name">Komal Ali</h3>
+                <span class="user-role">Senior UI/UX Designer</span>
+                <img
+                  class="adobe-certificate"
+                  src="assets/img/adobe-certified.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="contact-details-icons-whole-wrapper">
+              <div class="contact-details-social-icons">
+                <div class="icon-background">
+                  <img src="/assets/img/location-icon.svg" alt="location" />
+                </div>
+                <p>United, Kingdom</p>
+              </div>
+              <div class="contact-details-social-icons">
+                <div class="icon-background">
+                  <img src="/assets/img/phone-icon.svg" alt="phone" />
+                </div>
+                <a href="tel:+447853442227">+44 7853 442227</a>
+              </div>
+              <div class="contact-details-social-icons">
+                <div class="icon-background">
+                  <img src="/assets/img/linkedin-icon.svg" alt="linkedin" />
+                </div>
+                <a href="https://www.linkedin.com/in/komal-ali-46678a276/">Komal Ali</a>
+              </div>
+              <div class="contact-details-social-icons">
+                <div class="icon-background">
+                  <img
+                    src="/assets/img/mail-icon.svg"
+                    style="margin-left: -3px"
+                    alt="email"
+                  />
+                </div>
+                <a href="mailto:komalali.jhangiani@gmail.com">komalali.ux@gmail.com</a>
+              </div>
             </div>
           </div>
         </div>

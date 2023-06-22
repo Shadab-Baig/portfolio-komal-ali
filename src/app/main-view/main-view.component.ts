@@ -10,6 +10,7 @@ import { filter } from 'rxjs/operators';
 export class MainViewComponent implements OnInit {
   
   isOpen = false;
+  isOpenProfile = false;
   activeRoute: string | undefined;
   constructor(private router: Router) { }
 
@@ -36,6 +37,9 @@ export class MainViewComponent implements OnInit {
   }
     toggleSidebar() {
       this.isOpen = !this.isOpen;
+    }
+    toggleProfileSidebar() {
+      this.isOpenProfile = !this.isOpenProfile;
     }
   
 }
