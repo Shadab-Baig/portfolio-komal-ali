@@ -112,7 +112,7 @@
             height: 7.8vh;
             align-items: center;
             background: rgba(255, 255, 255, 0.28);
-            border: none !important;
+            border: 0.5px solid #62A2B6;
             border-radius: 12px;
 
             .card-heading {
@@ -238,6 +238,7 @@
               border: 0.5px solid #62A2B6 !important;
               border-radius: 0px !important;
               justify-content: center;
+              border: none !important;
               .card-heading{            
                 font-size: 4.1vw !important;
                 justify-content: center !important;
