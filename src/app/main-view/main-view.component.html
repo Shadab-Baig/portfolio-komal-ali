@@ -18,7 +18,7 @@
           </div>
           <div class="user-toggle-menu-wrapper">
             <div class="active-router">
-              <p>{{activeRoute}}</p>
+              <p [ngStyle]="{'font-size': activeRoute === 'graphic-designing' ? '14px' : '16px'}">{{ activeRoute }}</p>
             </div>
             <div class="toggle-menu-button">
               <button class="menu-button"  (click)="toggleSidebar()">
